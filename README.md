@@ -12,3 +12,5 @@ well it's alright since this data is more than just private.
 so there will be no any data here and 
 actually i was doing this thinking crossplatforming way and it was more mono2 compatible
 and it was built on postgersql with npgsql plugin
+
+SyncToolBase - is for syncing tables of different databases running as service with timer - very easy scriptalike
