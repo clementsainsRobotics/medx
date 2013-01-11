@@ -1,0 +1,11 @@
+﻿
+  <tr>
+    <td colspan="3" align="justify" >
+
+       <li><span id="txt">проведено DOCUMENT от DATE</span></li>      
+     <span id="txt">BODY</span>
+	 
+      <span id="txt"><br><br>
+    </span></td>
+  </tr>
+

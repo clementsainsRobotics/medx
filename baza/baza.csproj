@@ -1,0 +1,964 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0DFF567F-8BAE-4805-A7A5-1A40506CFE04}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>baza</RootNamespace>
+    <AssemblyName>medex</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetZone>LocalIntranet</TargetZone>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SignAssembly>false</SignAssembly>
+    <ManifestCertificateThumbprint>37D7F2DD70580ED30764F54FBDE94173DED9BFFB</ManifestCertificateThumbprint>
+    <ManifestKeyFile>baza_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ApplicationIcon>shar64.ico</ApplicationIcon>
+    <StartupObject>baza.Program</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PublishUrl>Z:\ftp\Incoming\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <InstallUrl>\\localhost\c\program files\medex\</InstallUrl>
+    <SupportUrl>http://medx.spb.ru</SupportUrl>
+    <TargetCulture>ru-RU</TargetCulture>
+    <ProductName>medex</ProductName>
+    <PublisherName>oeai</PublisherName>
+    <SuiteName>Мед Эксперт База данных НИИ Онкологии</SuiteName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.82.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>3</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GvS.Controls.HtmlTextbox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\GvS.Controls.HtmlTextbox.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Mono.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.0.8.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="policy.2.0.Npgsql, Version=0.0.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Dlls\policy.2.0.Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addNewSchemeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addNewSchemeForm.Designer.cs">
+      <DependentUpon>addNewSchemeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addStreet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addStreet.Designer.cs">
+      <DependentUpon>addStreet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DALCPatients.cs" />
+    <Compile Include="DBExchange.cs" />
+    <Compile Include="Document\Document.cs" />
+    <Compile Include="Document\DocumentProcessing.cs" />
+    <Compile Include="Document\SampleType.cs" />
+    <Compile Include="Editor\ClassRadiologyItem.cs" />
+    <Compile Include="Editor\FormChangeSampleType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\FormChangeSampleType.Designer.cs">
+      <DependentUpon>FormChangeSampleType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\FormNewRadiologyItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\FormNewRadiologyItem.Designer.cs">
+      <DependentUpon>FormNewRadiologyItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\FormNewTemplateEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\FormNewTemplateEditor.Designer.cs">
+      <DependentUpon>FormNewTemplateEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\FormNormEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\FormNormEditor.Designer.cs">
+      <DependentUpon>FormNormEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\FormReestrEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\FormReestrEditor.Designer.cs">
+      <DependentUpon>FormReestrEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChangePassword.Designer.cs">
+      <DependentUpon>FormChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddNewSqlTemplateCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddNewSqlTemplateCode.Designer.cs">
+      <DependentUpon>FormAddNewSqlTemplateCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editor\FormAddNewSQLTemplateDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor\FormAddNewSQLTemplateDocument.Designer.cs">
+      <DependentUpon>FormAddNewSQLTemplateDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDocumentsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDocumentsList.Designer.cs">
+      <DependentUpon>FormDocumentsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormPrintDocuments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPrintDocuments.Designer.cs">
+      <DependentUpon>FormPrintDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddAnalysis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddAnalysis.Designer.cs">
+      <DependentUpon>FormAddAnalysis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddNewLab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddNewLab.Designer.cs">
+      <DependentUpon>FormAddNewLab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddNewNormLimit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddNewNormLimit.Designer.cs">
+      <DependentUpon>FormAddNewNormLimit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddNewZone.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddNewZone.Designer.cs">
+      <DependentUpon>FormAddNewZone.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAEoccured.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAEoccured.Designer.cs">
+      <DependentUpon>FormAEoccured.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCRF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCRF.Designer.cs">
+      <DependentUpon>FormCRF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSimpleInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSimpleInputForm.Designer.cs">
+      <DependentUpon>FormSimpleInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTreatmentBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTreatmentBase.Designer.cs">
+      <DependentUpon>FormTreatmentBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormVypiska.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormVypiska.Designer.cs">
+      <DependentUpon>FormVypiska.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Processing\Diagnosis.cs" />
+    <Compile Include="Processing\Drugs.cs" />
+    <Compile Include="Processing\GetDocumentBody.cs" />
+    <Compile Include="Processing\Treatment.cs" />
+    <Compile Include="Treatment_Forms\FormDrugTreatment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Treatment_Forms\FormDrugTreatment.Designer.cs">
+      <DependentUpon>FormDrugTreatment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEtap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEtap.Designer.cs">
+      <DependentUpon>FormEtap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormDrugAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormDrugAdd.Designer.cs">
+      <DependentUpon>FormDrugAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormGistology.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormGistology.Designer.cs">
+      <DependentUpon>FormGistology.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormCytology.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormCytology.Designer.cs">
+      <DependentUpon>FormCytology.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormKt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormKt.Designer.cs">
+      <DependentUpon>FormKt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLabDataBlood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLabDataBlood.Designer.cs">
+      <DependentUpon>FormLabDataBlood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLabDataSample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLabDataSample.Designer.cs">
+      <DependentUpon>FormLabDataSample.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLabDataUrine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLabDataUrine.Designer.cs">
+      <DependentUpon>FormLabDataUrine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormNewLabTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNewLabTemplate.Designer.cs">
+      <DependentUpon>FormNewLabTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormPatientIdList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormPatientIdList.Designer.cs">
+      <DependentUpon>FormPatientIdList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Treatment_Forms\FormRadiTreatment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Treatment_Forms\FormRadiTreatment.Designer.cs">
+      <DependentUpon>FormRadiTreatment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formRg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formRg.Designer.cs">
+      <DependentUpon>formRg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormScintio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormScintio.Designer.cs">
+      <DependentUpon>FormScintio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSetDiagnosis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSetDiagnosis.Designer.cs">
+      <DependentUpon>FormSetDiagnosis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSetNewTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSetNewTicket.Designer.cs">
+      <DependentUpon>FormSetNewTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Treatment_Forms\FormSurgeryTreatment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Treatment_Forms\FormSurgeryTreatment.Designer.cs">
+      <DependentUpon>FormSurgeryTreatment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSurvey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSurvey.Designer.cs">
+      <DependentUpon>FormSurvey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTicket.Designer.cs">
+      <DependentUpon>FormTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormSetNewTicketRadio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormSetNewTicketRadio.Designer.cs">
+      <DependentUpon>FormSetNewTicketRadio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTumorDescr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTumorDescr.Designer.cs">
+      <DependentUpon>FormTumorDescr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormTumorDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormTumorDetails.Designer.cs">
+      <DependentUpon>FormTumorDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\formUzi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\formUzi.Designer.cs">
+      <DependentUpon>formUzi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialControls\SearchReestrBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SpecialControls\SearchReestrBox.Designer.cs">
+      <DependentUpon>SearchReestrBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImgResize.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MultiLineListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="naznachenie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="naznachenie.Designer.cs">
+      <DependentUpon>naznachenie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\newPatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\newPatientForm.Designer.cs">
+      <DependentUpon>newPatientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient.cs" />
+    <Compile Include="Forms\PatientKart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PatientKart.Designer.cs">
+      <DependentUpon>PatientKart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\printFormCyt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\printFormCyt.Designer.cs">
+      <DependentUpon>printFormCyt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\prntData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\prntData.Designer.cs">
+      <DependentUpon>prntData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Processing\LabTickets.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="addNewSchemeForm.resx">
+      <DependentUpon>addNewSchemeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addStreet.resx">
+      <DependentUpon>addStreet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\FormChangeSampleType.resx">
+      <DependentUpon>FormChangeSampleType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\FormNewRadiologyItem.resx">
+      <DependentUpon>FormNewRadiologyItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\FormNewTemplateEditor.resx">
+      <DependentUpon>FormNewTemplateEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\FormNormEditor.resx">
+      <DependentUpon>FormNormEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\FormReestrEditor.resx">
+      <DependentUpon>FormReestrEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChangePassword.resx">
+      <DependentUpon>FormChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddNewSqlTemplateCode.resx">
+      <DependentUpon>FormAddNewSqlTemplateCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor\FormAddNewSQLTemplateDocument.resx">
+      <DependentUpon>FormAddNewSQLTemplateDocument.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDocumentsList.resx">
+      <DependentUpon>FormDocumentsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPrintDocuments.resx">
+      <DependentUpon>FormPrintDocuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddAnalysis.resx">
+      <DependentUpon>FormAddAnalysis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddNewLab.resx">
+      <DependentUpon>FormAddNewLab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddNewNormLimit.resx">
+      <DependentUpon>FormAddNewNormLimit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddNewZone.resx">
+      <DependentUpon>FormAddNewZone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAEoccured.resx">
+      <DependentUpon>FormAEoccured.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCRF.resx">
+      <DependentUpon>FormCRF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSimpleInputForm.resx">
+      <DependentUpon>FormSimpleInputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTreatmentBase.resx">
+      <DependentUpon>FormTreatmentBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormVypiska.resx">
+      <DependentUpon>FormVypiska.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Treatment_Forms\FormDrugTreatment.resx">
+      <DependentUpon>FormDrugTreatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEtap.resx">
+      <DependentUpon>FormEtap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormDrugAdd.resx">
+      <DependentUpon>FormDrugAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormGistology.resx">
+      <DependentUpon>FormGistology.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormCytology.resx">
+      <DependentUpon>FormCytology.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormKt.resx">
+      <DependentUpon>FormKt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLabDataBlood.resx">
+      <DependentUpon>FormLabDataBlood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLabDataSample.resx">
+      <DependentUpon>FormLabDataSample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLabDataUrine.resx">
+      <DependentUpon>FormLabDataUrine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormNewLabTemplate.resx">
+      <DependentUpon>FormNewLabTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormPatientIdList.resx">
+      <DependentUpon>FormPatientIdList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Treatment_Forms\FormRadiTreatment.resx">
+      <DependentUpon>FormRadiTreatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formRg.resx">
+      <DependentUpon>formRg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormScintio.resx">
+      <DependentUpon>FormScintio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSetDiagnosis.resx">
+      <DependentUpon>FormSetDiagnosis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSetNewTicket.resx">
+      <DependentUpon>FormSetNewTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Treatment_Forms\FormSurgeryTreatment.resx">
+      <DependentUpon>FormSurgeryTreatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSurvey.resx">
+      <DependentUpon>FormSurvey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTicket.resx">
+      <DependentUpon>FormTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormSetNewTicketRadio.resx">
+      <DependentUpon>FormSetNewTicketRadio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTumorDescr.resx">
+      <DependentUpon>FormTumorDescr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormTumorDetails.resx">
+      <DependentUpon>FormTumorDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\formUzi.resx">
+      <DependentUpon>formUzi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpecialControls\SearchReestrBox.resx">
+      <DependentUpon>SearchReestrBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="naznachenie.resx">
+      <DependentUpon>naznachenie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\newPatientForm.resx">
+      <DependentUpon>newPatientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PatientKart.resx">
+      <DependentUpon>PatientKart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\printFormCyt.resx">
+      <DependentUpon>printFormCyt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\prntData.resx">
+      <DependentUpon>prntData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\FormLoadXmlForLab.resx">
+      <DependentUpon>FormLoadXmlForLab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\ShowLabTicketScreen.resx">
+      <DependentUpon>ShowLabTicketScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen\ShowRadioTicketScreen.resx">
+      <DependentUpon>ShowRadioTicketScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpecialControls\SearcPatientBox.resx">
+      <DependentUpon>SearcPatientBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpecialControls\HeaderTextBox.resx">
+      <DependentUpon>HeaderTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpecialControls\BodyRichTextBox.resx">
+      <DependentUpon>BodyRichTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartupForm.resx">
+      <DependentUpon>StartupForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\FormRegisterError.resx">
+      <DependentUpon>FormRegisterError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Templates\TemplateEditor.resx">
+      <DependentUpon>TemplateEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Treatment_Forms\treatment.resx">
+      <DependentUpon>treatment.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="baza_2_TemporaryKey.pfx" />
+    <None Include="baza_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\DBExchange.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Forms\RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen\FormLoadXmlForLab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen\FormLoadXmlForLab.Designer.cs">
+      <DependentUpon>FormLoadXmlForLab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen\ShowLabTicketScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen\ShowLabTicketScreen.Designer.cs">
+      <DependentUpon>ShowLabTicketScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen\ShowRadioTicketScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen\ShowRadioTicketScreen.Designer.cs">
+      <DependentUpon>ShowRadioTicketScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialControls\SearcPatientBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SpecialControls\SearcPatientBox.Designer.cs">
+      <DependentUpon>SearcPatientBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialControls\HeaderTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SpecialControls\HeaderTextBox.Designer.cs">
+      <DependentUpon>HeaderTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialControls\BodyRichTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SpecialControls\BodyRichTextBox.Designer.cs">
+      <DependentUpon>BodyRichTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartupForm.Designer.cs">
+      <DependentUpon>StartupForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tabDiagEnv.cs">
+    </Compile>
+    <Compile Include="tabSurgeryEnv.cs" />
+    <Compile Include="Templates\FormRegisterError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templates\FormRegisterError.Designer.cs">
+      <DependentUpon>FormRegisterError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\TemplateEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Templates\TemplateEditor.Designer.cs">
+      <DependentUpon>TemplateEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Treatment_Forms\treatment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Treatment_Forms\treatment.Designer.cs">
+      <DependentUpon>treatment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserClass\Doctors.cs" />
+    <Compile Include="Warnings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cytology.htm" />
+    <Content Include="Dlls\GvS.Controls.HtmlTextbox.dll" />
+    <Content Include="Dlls\Mono.Security.dll" />
+    <Content Include="Dlls\Npgsql.dll" />
+    <Content Include="Dlls\policy.2.0.Npgsql.dll" />
+    <Content Include="Errors\errlog.txt" />
+    <Content Include="Templates\Report4\Body.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report4\Footer.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report4\Header.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report2\Body.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report2\Footer.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report2\Header.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report3\Body.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report3\Footer.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report3\Header.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report6\Body.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report6\Footer.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report6\Header.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report5\Body.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report5\Footer.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report5\Header.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report1\Body.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report1\Footer.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report1\Header.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report0\Body.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report0\Footer.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report0\Header.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\generic.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Gistology.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\HTMLPageAwaitingList.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\HTMLPageGeneric.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\HTMLPageKomission.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\HTMLPageSend.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\kt.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="settings.xml" />
+    <Content Include="shar.ico" />
+    <Content Include="shar64.ico" />
+    <Content Include="Templates\Report\Body.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report\Footer.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\Report\Header.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="baza_1_TemporaryKey.pfx" />
+    <None Include="shar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль .NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Dlls\GvS.Controls.HtmlTextbox.dll">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Dlls\Mono.Security.dll">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Dlls\Npgsql.dll">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Dlls\policy.2.0.Npgsql.dll">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="GvS.Controls.HtmlTextbox">
+      <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Mono.Security">
+      <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Npgsql">
+      <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="policy.2.0.Npgsql">
+      <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="settings.xml">
+      <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

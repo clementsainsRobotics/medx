@@ -1,0 +1,69 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Windows.Forms;
+
+namespace baza
+{
+    public partial class newPatientForm : Form
+    {
+        
+        
+        public newPatientForm()
+        {
+            InitializeComponent();
+        }
+
+        public void createDataForPatient()
+        {
+            DataSet dsOnk = new DataSet();
+            DBExchange.Inst.writeNewPatient = dsOnk.Tables.Add("new_patient");
+            DBExchange.Inst.writeNewPatient.Columns.Add("family_name");
+            DBExchange.Inst.writeNewPatient.Columns.Add("first_name");
+            DBExchange.Inst.writeNewPatient.Columns.Add("second_name");
+            DBExchange.Inst.writeNewPatient.Columns.Add("birth_date");
+            DBExchange.Inst.writeNewPatient.Columns.Add("nib");
+            DBExchange.Inst.writeNewPatient.Columns.Add("is_man");
+            DBExchange.Inst.writeNewPatient.Columns.Add("doc_id");
+            DataRow wnpRow = DBExchange.Inst.writeNewPatient.NewRow();
+                    wnpRow[0] = this.pFamilyNameTextBox1.Text;
+                    wnpRow[1] = this.pNameTextBox2.Text;
+                    wnpRow[2] = this.p_s_name_textBox3.Text;
+                    wnpRow[3] = this.pdateTimePicker1.Value;
+                    wnpRow[4] = Convert.ToInt32(this.pHistoryNumbertextBox5.Text);
+                        if ((bool)radioButton1.Checked)
+                            {
+                                wnpRow[5] = true;
+                            }
+                        else if ((bool)radioButton2.Checked)
+                            {
+                                wnpRow[5] = true;
+                            }
+                        else
+                            {
+                                MessageBox.Show("Выберите пол пациента", "Сделайте выбор",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                    wnpRow[6] = DBExchange.Inst.dbUsrId;
+                    DBExchange.Inst.writeNewPatient.Rows.Add(wnpRow);
+                
+        }
+
+        public void insertPatientData()
+        {
+            DBExchange.Inst.crtNewPatient();
+        }
+
+        private void записатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            createDataForPatient();
+            insertPatientData();
+
+        }
+
+    }
+}
