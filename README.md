@@ -3,6 +3,7 @@ medx
 at the beginning i thought to build a java+sql database frontend to simply move some data inside the hospital
 medics database of counter cancer institute "nii onkologii", i was working on it with Alexei Novik
 that was a hard time when i've met Alex in institute and he has a database working on msaccess, 
+so i gotta ask him first if he wants to share database structure.  
 first i was trying to modify it with my other friend but he left saying that it is very hard for him building a visual basic database
 ok then i've moved to csharp, since "they said" and began to rebuild msaccess structure for sql environment
 and after doing that wrote some part of gui that is stil not ended because 
