@@ -14,3 +14,8 @@ actually i was doing this thinking crossplatforming way and it was more mono2 co
 and it was built on postgersql with npgsql plugin
 
 SyncToolBase - is for syncing tables of different databases running as service with timer - very easy scriptalike
+The TrialDataApp was like a providing interface just for trials without much of journals etc.
+Baza - is the gui that provides a lot of different forms and history
+PdfPrint - to print some simple forms getting data from db
+
+so as i look on folder dates i've started to work on it in april 2008 and ended up in apr 2011 - \\//
